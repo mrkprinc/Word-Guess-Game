@@ -1,0 +1,102 @@
+body {
+    font-family: 'Robot Condensed', sans-serif;
+    font-weight: lighter;
+    color: #333;
+    font-size: 20px;
+}
+
+main {
+    width: 960px;
+    max-width: 100%;
+    margin: 24px auto;
+}
+
+section {
+    position: relative;
+    box-sizing: border-box;
+    float: left;
+    height: 450px;
+    border: 3px solid red;
+    border-radius: 15px;
+    margin: 5px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+#section-hangman {
+    width: 38%;
+}
+
+#section-game {
+    width: 58%;
+}
+
+#hangman-placeholder {
+    width: 200px;
+    height: 250px;
+    background-color: lightgray;
+    margin: auto;
+}
+
+.letter {
+    display: inline-block;
+    margin: 3px;
+    width: 1.5em;
+    height: 1.5em;
+    padding-top: 0.25em;
+    text-align: center;
+    border: 1px solid #666666;
+    box-shadow: 2px 2px #cccccc;
+}
+
+p {
+    padding: 12px 0;
+}
+
+header {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 16px;
+    position: absolute;
+    top: 0px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    background-color: red;
+    color: white;
+}
+
+header::after, main::after, section::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    padding: 20px 0 10px 0;
+    background-color:#666666;
+    color: #cccccc;
+    text-align: center;
+    font-size: 12px;
+}
+
+
+@media screen and (max-width: 640px) {
+    section {
+        float: none;
+    }
+
+    #section-hangman {
+        width: 100%;
+    }
+
+    #section-game {
+        width: 100%;
+    }
+}
+
