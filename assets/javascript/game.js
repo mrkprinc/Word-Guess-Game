@@ -41,6 +41,23 @@ var game = {
 
         this.guessed.push(letterGuess);
 
+        // if no guesses left, new round
+
+        if (this.lifeLeft == 0) {
+            alert("You lose!");
+            lossesCount += 1;
+            newRound("blue");
+        }
+
+        // if word guessed, new round
+
+        if (this.displayWord.indexOf("_") == "-1") {
+            alert("You win!");
+            winsCount += 1;
+            newRound("yellow");
+        }
+
+
         this.updateScreen();
     },
 
@@ -58,7 +75,7 @@ var game = {
         for(i=0; i < this.word.length; i++) {
             var newDiv = document.createElement("div");
             newDiv.innerHTML = this.displayWord[i];
-            newDiv.className = "letter";
+            newDiv.className = "letter l" + i;
             wordDiv.appendChild(newDiv);
         }
 
@@ -67,7 +84,7 @@ var game = {
         for(i=0; i < this.guessedWrong.length; i++) {
             var newDiv = document.createElement("div");
             newDiv.innerHTML = this.guessedWrong[i];
-            newDiv.className = "letter";
+            newDiv.className = "letter no-bounce";
             guessedDiv.appendChild(newDiv);
         }
     },
