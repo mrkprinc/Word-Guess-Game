@@ -17,17 +17,26 @@
 
             <section id="section-hangman">
 
-                <header id="score">
-                    Wins: <span id="span-wins" class="letter no-bounce tally">0</span> Losses: <span id="span-losses" class="letter no-bounce tally">0</span>
-                </header>
+                <header id="title">Hangman Game</header>
 
-                <div id="hangman-placeholder">here</div>
+                <div id="hangman-placeholder">
+
+                    <div id="hangman-head" class="man">O</div>
+                    <div id="hangman-armL" class="man">/</div>
+                    <div id="hangman-body" class="man">|</div>
+                    <div id="hangman-armR" class="man">\</div>
+                    <div id="hangman-legL" class="man">/</div>
+                    <div id="hangman-legR" class="man">\</div>
+
+                </div>
 
             </section>           
             
             <section id="section-game">
 
-                <header id="title">Hangman Game</header>
+                <header id="score">
+                    Wins: <span id="span-wins" class="letter tally">0</span> Losses: <span id="span-losses" class="letter tally">0</span>
+                </header>
 
                 <p>Press any letter to make a guess!</p>
 
