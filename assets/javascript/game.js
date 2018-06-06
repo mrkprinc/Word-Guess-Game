@@ -57,11 +57,15 @@ var game = {
     
             if (this.lifeLeft == 0) {
                 alert("You lose!");
-                lossesCount += 1;
                 newRound(chooseColor());
     
-                //update score
-                loseSpan.innerHTML = lossesCount;
+                //update score 
+                lossesCount += 1;
+                loseSpan.innerHTML = "";
+                var newSpan = document.createElement("span");
+                newSpan.className = "letter tally";
+                newSpan.innerHTML = lossesCount;
+                loseSpan.appendChild(newSpan);
             }
     
             // if word guessed, new round
@@ -77,7 +81,11 @@ var game = {
     
                 //update score
                 winsCount += 1;
-                winSpan.innerHTML = winsCount;
+                winSpan.innerHTML = "";
+                var newSpan = document.createElement("span");
+                newSpan.className = "letter tally";
+                newSpan.innerHTML = winsCount;
+                winSpan.appendChild(newSpan);
 
                 newRound(chooseColor());
             }
