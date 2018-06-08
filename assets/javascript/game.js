@@ -7,6 +7,7 @@ var lossesCount = 0;
 var winSpan = document.querySelector("#span-wins");
 var loseSpan = document.querySelector("#span-losses");
 var manParts = ['hangman-legR', 'hangman-legL', 'hangman-armR', 'hangman-armL', 'hangman-body', 'hangman-head'];
+var noRepeat = [];
 
 // game object
 
@@ -178,7 +179,18 @@ var game = {
  
  function chooseColor() {
     var wordBank = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink'];
-    var j = Math.floor(Math.random() * wordBank.length);
-    return wordBank[j];
+
+    do {
+        var j = Math.floor(Math.random() * wordBank.length);
+    } while (noRepeat.indexOf(wordBank[j]) != "-1");
+
+    var word = wordBank[j];
+    noRepeat.push(word);
+    if(noRepeat.length == wordBank.length) {
+        noRepeat.shift();
+    }
+
+    console.log(noRepeat);
+    return word; 
  }
 

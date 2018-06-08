@@ -24,6 +24,7 @@ section {
     text-align: center;
     display: flex;
     flex-direction: column;
+    transition: border-color 1s;
 }
 
 #section-hangman {
@@ -166,6 +167,7 @@ header {
     top: 0px;
     border-bottom: 2px solid #666;
     background-color: #f6f6f6;
+    transition: border-color 1s;
 }
 
 header::after, main::after, section::after {
