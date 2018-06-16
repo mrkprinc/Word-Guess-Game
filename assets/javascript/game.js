@@ -9,6 +9,9 @@ var loseSpan = document.querySelector("#span-losses");
 var manParts = ['hangman-legR', 'hangman-legL', 'hangman-armR', 'hangman-armL', 'hangman-body', 'hangman-head'];
 var noRepeat = [];
 
+var guessable = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+                'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
 // game object
 
 var game = {
@@ -29,8 +32,9 @@ var game = {
         // wrongGuess starts true, changes to false if letter matches
 
         wrongGuess = true;
-        checkGuessed = this.guessed.indexOf(letterGuess);
-        if (checkGuessed == "-1") {
+        var checkGuessed = this.guessed.indexOf(letterGuess);
+        var checkGuessable = guessable.indexOf(letterGuess);
+        if (checkGuessed == "-1" && checkGuessable != "-1") {
 
             //code only runs if letter has not already been guessed
             //find matching letters, change from "_" in the display word
